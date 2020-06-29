@@ -131,7 +131,7 @@ public class DealWithReversalFragment extends Fragment {
         progressDialog.setMessage("正在获取仲裁列表...");
         progressDialog.show();
 
-        NetImplementation.allArbitration(arbitrationList, myHandler);
+        NetImplementation.allArbitration(arbitrationList, myHandler, IntConstants.MANAGER_GET_ARBITRATION, null);
     }
 
     public void refreshArbitration(){

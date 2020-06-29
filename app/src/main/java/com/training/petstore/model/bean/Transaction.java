@@ -19,6 +19,17 @@ public class Transaction {
         this.pet_id = pet_id;
     }
 
+    public Transaction(String transaction_id, String transaction_time, int price,
+                       String seller_id, String buyer_id, String pet_id, boolean hasArbitration) {
+        this.transaction_id = transaction_id;
+        this.transaction_time = transaction_time;
+        this.price = price;
+        this.seller_id = seller_id;
+        this.buyer_id = buyer_id;
+        this.pet_id = pet_id;
+        this.hasArbitration = hasArbitration;
+    }
+
     public String getTransaction_id() {
         return transaction_id;
     }

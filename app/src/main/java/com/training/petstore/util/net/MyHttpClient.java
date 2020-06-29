@@ -15,7 +15,8 @@ public class MyHttpClient{
                     myHttpClient = new OkHttpClient.Builder()
                             .connectTimeout(5, TimeUnit.SECONDS)
                             .callTimeout(5, TimeUnit.SECONDS)
-                            .readTimeout(20, TimeUnit.SECONDS)
+                            .readTimeout(10, TimeUnit.SECONDS)
+                            .retryOnConnectionFailure(false)
                             .build();
                 }
             }

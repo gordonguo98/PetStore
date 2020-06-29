@@ -47,4 +47,7 @@ public class IntConstants {
 
     public static final int ADD_TO_CART = 1026;
 
+    public static final int MANAGER_GET_ARBITRATION = 1027;
+    public static final int USER_GET_ARBITRATION = 1028;
+
 }

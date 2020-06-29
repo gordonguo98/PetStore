@@ -78,6 +78,7 @@ public class StoreActivity extends AppCompatActivity {
     private static final String TAG = "调试" + StoreActivity.class.getSimpleName();
 
     User user = MyApplication.getUser();
+    List<String> arbitratedTransactions = new ArrayList<>();
 
     private SwipeRefreshLayout swipeRefreshLayout;
     private RecyclerView recyclerView;
@@ -414,17 +415,22 @@ public class StoreActivity extends AppCompatActivity {
         recyclerView.setAdapter(transactionAdapter);
         recyclerView.setLayoutManager(linearLayoutManager);
 
-        getTransactions(transactions);
+        //getTransactions(transactions);
+        queryArbitration();
 
     }
 
-    public void getTransactions(List<Transaction> transactions){
+    public void getTransactions(){
+        NetImplementation.allTransactions(transactions, arbitratedTransactions, myHandler);
+    }
+
+    private void queryArbitration() {
 
         progressDialog.setTitle("提示");
         progressDialog.setMessage("正在获取交易记录...");
         progressDialog.show();
 
-        NetImplementation.allTransactions(transactions, myHandler);
+        NetImplementation.allArbitration(null, myHandler, IntConstants.USER_GET_ARBITRATION, arbitratedTransactions);
     }
 
     public void refreshTransactions(){
@@ -456,6 +462,7 @@ public class StoreActivity extends AppCompatActivity {
         if(alertDialog != null && alertDialog.isShowing())
             alertDialog.dismiss();
         transactions.get(position).setHasArbitration(true);
+        transactionAdapter.notifyItemChanged(position);
     }
 
     public void goToPetDetailActivity(Pet pet, int position){
@@ -599,6 +606,9 @@ public class StoreActivity extends AppCompatActivity {
                 case IntConstants.FINISH_ARBITRATION_REQUEST:
                     storeActivity.show((String) msg.obj);
                     storeActivity.finishArbitrationRequest(msg.arg1);
+                    break;
+                case IntConstants.GOT_ARBITRATION:
+                    storeActivity.getTransactions();
                     break;
                 default:
                     break;

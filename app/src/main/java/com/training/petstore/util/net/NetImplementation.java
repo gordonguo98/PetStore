@@ -753,7 +753,7 @@ public class NetImplementation {
         return new CodeAndMsg(IntConstants.CODE_ERROR, "未知错误");
     }
 
-    public static void allTransactions(List<Transaction> transactions, Handler handler){
+    public static void allTransactions(List<Transaction> transactions, List<String> arbitratedTransactions, Handler handler){
         new Thread(new Runnable() {
             @Override
             public void run() {
@@ -796,13 +796,15 @@ public class NetImplementation {
                     }
                     transactions.clear();
                     for(int i = 0; i < transactionResult.getTransaction_id().size(); i++){
-                        if(transactionResult.getBuyer_id().get(i).equals(MyApplication.getUser().getUserId()))
+                        if(transactionResult.getBuyer_id().get(i).equals(MyApplication.getUser().getUserId())) {
                             transactions.add(new Transaction(transactionResult.getTransaction_id().get(i),
-                                transactionResult.getTransaction_time().get(i),
-                                transactionResult.getPrice().get(i),
-                                transactionResult.getSeller_id().get(i),
-                                transactionResult.getBuyer_id().get(i),
-                                transactionResult.getPet_id().get(i)));
+                                    transactionResult.getTransaction_time().get(i),
+                                    transactionResult.getPrice().get(i),
+                                    transactionResult.getSeller_id().get(i),
+                                    transactionResult.getBuyer_id().get(i),
+                                    transactionResult.getPet_id().get(i),
+                                    arbitratedTransactions.contains(transactionResult.getTransaction_id().get(i))));
+                        }
                     }
                     message.what = IntConstants.GOT_TRANSACTION;
                     message.obj = "获取交易记录成功";
@@ -1052,7 +1054,7 @@ public class NetImplementation {
         }).start();
     }
 
-    public static void allArbitration(List<Arbitration> arbitration, Handler handler){
+    public static void allArbitration(List<Arbitration> arbitration, Handler handler, int action, List<String> arbitratedTransactions){
         new Thread(new Runnable() {
             @Override
             public void run() {
@@ -1093,14 +1095,23 @@ public class NetImplementation {
                         handler.sendMessage(message);
                         return;
                     }
-                    arbitration.clear();
-                    for(int i = 0; i < arbitrationResult.getA_id().size(); i++){
+                    if(action == IntConstants.MANAGER_GET_ARBITRATION) {
+                        arbitration.clear();
+                        for (int i = 0; i < arbitrationResult.getA_id().size(); i++) {
                             arbitration.add(new Arbitration(arbitrationResult.getA_id().get(i),
                                     arbitrationResult.getT_id().get(i),
                                     arbitrationResult.getTime().get(i),
                                     arbitrationResult.getDesc().get(i),
                                     arbitrationResult.getU_id().get(i),
                                     arbitrationResult.getComp().get(i)));
+                        }
+                    }else if(action == IntConstants.USER_GET_ARBITRATION){
+                        arbitratedTransactions.clear();
+                        String user_id = MyApplication.getUser().getUserId();
+                        for (int i = 0; i < arbitrationResult.getA_id().size(); i++) {
+                            if(arbitrationResult.getU_id().get(i).equals(user_id))
+                                arbitratedTransactions.add(arbitrationResult.getT_id().get(i));
+                        }
                     }
                     message.what = IntConstants.GOT_ARBITRATION;
                     message.obj = "获取仲裁列表成功";
