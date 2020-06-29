@@ -1,0 +1,338 @@
+@startuml
+
+title __BEAN's Class Diagram__\n
+
+  namespace com.training.petstore {
+    namespace model.bean {
+      class com.training.petstore.model.bean.Arbitration {
+          ~ a_id : String
+          ~ comp : String
+          ~ desc : String
+          ~ t_id : String
+          ~ time : String
+          ~ u_id : String
+          + Arbitration()
+          + Arbitration()
+          + getA_id()
+          + getComp()
+          + getDesc()
+          + getT_id()
+          + getTime()
+          + getU_id()
+          + setA_id()
+          + setComp()
+          + setDesc()
+          + setT_id()
+          + setTime()
+          + setU_id()
+      }
+    }
+  }
+  
+
+  namespace com.training.petstore {
+    namespace model.bean {
+      class com.training.petstore.model.bean.Pet {
+          - birth : String
+          - checked : boolean
+          - description : String
+          - name : String
+          - on_sell : String
+          - pet_id : String
+          - photo_url : String
+          - price : int
+          - user_id : String
+          - variety : String
+          + Pet()
+          + Pet()
+          + getBirth()
+          + getDescription()
+          + getName()
+          + getOn_sell()
+          + getPet_id()
+          + getPhoto_url()
+          + getPrice()
+          + getUser_id()
+          + getVariety()
+          + isChecked()
+          + setBirth()
+          + setChecked()
+          + setDescription()
+          + setName()
+          + setOn_sell()
+          + setPet_id()
+          + setPhoto_url()
+          + setPrice()
+          + setUser_id()
+          + setVariety()
+      }
+    }
+  }
+  
+
+  namespace com.training.petstore {
+    namespace model.bean {
+      class com.training.petstore.model.bean.ResponseBean {
+      }
+    }
+  }
+  
+
+  namespace com.training.petstore {
+    namespace model.bean {
+      class com.training.petstore.model.bean.ResponseBean.AccountSelect {
+          ~ administrator : String
+          ~ balance : int
+          ~ name : String
+          ~ password : String
+          ~ photo_url : String
+          ~ ret_code : int
+          + getAdministrator()
+          + getBalance()
+          + getName()
+          + getPassword()
+          + getPhoto_url()
+          + getRet_code()
+          + setAdministrator()
+          + setBalance()
+          + setName()
+          + setPassword()
+          + setPhoto_url()
+          + setRet_code()
+      }
+    }
+  }
+  
+
+  namespace com.training.petstore {
+    namespace model.bean {
+      class com.training.petstore.model.bean.ResponseBean.GeneralResponse {
+          ~ function : String
+          ~ methodID : String
+          ~ result : List<Result>
+          + getFunction()
+          + getMethodID()
+          + getResult()
+          + setFunction()
+          + setMethodID()
+          + setResult()
+      }
+    }
+  }
+  
+
+  namespace com.training.petstore {
+    namespace model.bean {
+      class com.training.petstore.model.bean.ResponseBean.GeneralResponseForString {
+          ~ function : String
+          ~ methodID : String
+          ~ result : List<ListResultForString>
+          + getFunction()
+          + getMethodID()
+          + getResult()
+          + setFunction()
+          + setMethodID()
+          + setResult()
+      }
+    }
+  }
+  
+
+  namespace com.training.petstore {
+    namespace model.bean {
+      class com.training.petstore.model.bean.ResponseBean.ListResultForArbitration {
+          ~ a_id : List<String>
+          ~ comp : List<String>
+          ~ desc : List<String>
+          ~ t_id : List<String>
+          ~ time : List<String>
+          ~ u_id : List<String>
+          + getA_id()
+          + getComp()
+          + getDesc()
+          + getT_id()
+          + getTime()
+          + getU_id()
+          + setA_id()
+          + setComp()
+          + setDesc()
+          + setT_id()
+          + setTime()
+          + setU_id()
+      }
+    }
+  }
+  
+
+  namespace com.training.petstore {
+    namespace model.bean {
+      class com.training.petstore.model.bean.ResponseBean.ListResultForInt {
+          ~ data : List<Integer>
+          ~ name : String
+          ~ type : String
+          + getData()
+          + getName()
+          + getType()
+          + setData()
+          + setName()
+          + setType()
+      }
+    }
+  }
+  
+
+  namespace com.training.petstore {
+    namespace model.bean {
+      class com.training.petstore.model.bean.ResponseBean.ListResultForString {
+          ~ data : List<String>
+          ~ name : String
+          ~ type : String
+          + getData()
+          + getName()
+          + getType()
+          + setData()
+          + setName()
+          + setType()
+      }
+    }
+  }
+  
+
+  namespace com.training.petstore {
+    namespace model.bean {
+      class com.training.petstore.model.bean.ResponseBean.ListResultForTransaction {
+          ~ buyer_id : List<String>
+          ~ pet_id : List<String>
+          ~ price : List<Integer>
+          ~ seller_id : List<String>
+          ~ transaction_id : List<String>
+          ~ transaction_time : List<String>
+          + getBuyer_id()
+          + getPet_id()
+          + getPrice()
+          + getSeller_id()
+          + getTransaction_id()
+          + getTransaction_time()
+          + setBuyer_id()
+          + setPet_id()
+          + setPrice()
+          + setSeller_id()
+          + setTransaction_id()
+          + setTransaction_time()
+      }
+    }
+  }
+  
+
+  namespace com.training.petstore {
+    namespace model.bean {
+      class com.training.petstore.model.bean.ResponseBean.Result {
+          ~ data : int
+          ~ name : String
+          ~ type : String
+          + getData()
+          + getName()
+          + getType()
+          + setData()
+          + setName()
+          + setType()
+      }
+    }
+  }
+  
+
+  namespace com.training.petstore {
+    namespace model.bean {
+      class com.training.petstore.model.bean.ResponseBean.ResultForString {
+          ~ data : String
+          ~ name : String
+          ~ type : String
+          + getData()
+          + getName()
+          + getType()
+          + setData()
+          + setName()
+          + setType()
+      }
+    }
+  }
+  
+
+  namespace com.training.petstore {
+    namespace model.bean {
+      class com.training.petstore.model.bean.Transaction {
+          ~ buyer_id : String
+          ~ hasArbitration : boolean
+          ~ pet_id : String
+          ~ price : int
+          ~ seller_id : String
+          ~ transaction_id : String
+          ~ transaction_time : String
+          + Transaction()
+          + getBuyer_id()
+          + getPet_id()
+          + getPrice()
+          + getSeller_id()
+          + getTransaction_id()
+          + getTransaction_time()
+          + isHasArbitration()
+          + setBuyer_id()
+          + setHasArbitration()
+          + setPet_id()
+          + setPrice()
+          + setSeller_id()
+          + setTransaction_id()
+          + setTransaction_time()
+      }
+    }
+  }
+  
+
+  namespace com.training.petstore {
+    namespace model.bean {
+      class com.training.petstore.model.bean.User {
+          - asset : int
+          - isAdmin : String
+          - nickName : String
+          - password : String
+          - photo_url : String
+          - userId : String
+          + User()
+          + getAsset()
+          + getIsAdmin()
+          + getNickName()
+          + getPassword()
+          + getPhoto_url()
+          + getUserId()
+          + setAsset()
+          + setIsAdmin()
+          + setNickName()
+          + setPassword()
+          + setPhoto_url()
+          + setUserId()
+      }
+    }
+  }
+  
+
+  com.training.petstore.model.bean.Pet .up.|> java.io.Serializable
+  com.training.petstore.model.bean.ResponseBean +-down- com.training.petstore.model.bean.ResponseBean.AccountSelect
+  com.training.petstore.model.bean.ResponseBean +-down- com.training.petstore.model.bean.ResponseBean.GeneralResponse
+  com.training.petstore.model.bean.ResponseBean +-down- com.training.petstore.model.bean.ResponseBean.GeneralResponseForString
+  com.training.petstore.model.bean.ResponseBean +-down- com.training.petstore.model.bean.ResponseBean.ListResultForArbitration
+  com.training.petstore.model.bean.ResponseBean +-down- com.training.petstore.model.bean.ResponseBean.ListResultForInt
+  com.training.petstore.model.bean.ResponseBean +-down- com.training.petstore.model.bean.ResponseBean.ListResultForString
+  com.training.petstore.model.bean.ResponseBean +-down- com.training.petstore.model.bean.ResponseBean.ListResultForTransaction
+  com.training.petstore.model.bean.ResponseBean +-down- com.training.petstore.model.bean.ResponseBean.Result
+  com.training.petstore.model.bean.ResponseBean +-down- com.training.petstore.model.bean.ResponseBean.ResultForString
+  com.training.petstore.model.bean.User .up.|> java.io.Serializable
+
+
+right footer
+
+
+PlantUML diagram generated by SketchIt! (https://bitbucket.org/pmesmeur/sketch.it)
+For more information about this tool, please contact philippe.mesmeur@gmail.com
+endfooter
+
+@enduml

@@ -1,0 +1,133 @@
+<!-- Copyright 2017 Google Inc.
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License. -->
+
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme"
+        parent="@style/BaseTheme" />
+
+    <style name="BaseTheme"
+        parent="@style/Theme.AppCompat.Light.NoActionBar">
+        <item name="android:actionModeBackground">@color/blue_grey_600</item>
+        <item name="android:dialogTheme">@style/Dialog.Theme</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="windowActionModeOverlay">true</item>
+    </style>
+
+    <style name="Dialog.Theme"
+        parent="@style/Theme.AppCompat.Light.Dialog">
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+    </style>
+
+    <style name="RippleStyleWhite">
+        <item name="mrl_rippleAlpha">0.2</item>
+        <item name="mrl_rippleColor">#80ffffff</item>
+        <item name="mrl_rippleHover">true</item>
+        <item name="mrl_rippleOverlay">true</item>
+    </style>
+
+    <style name="RippleStyleBlack" parent="@style/RippleStyleWhite">
+        <item name="mrl_rippleColor">#8096989a</item>
+    </style>
+
+    <style name="Yellow.Small.AppCompatRatingBar" parent="@style/Base.Widget.AppCompat.RatingBar.Small">
+        <item name="colorControlActivated">@color/yellow_600</item>
+        <item name="colorControlNormal">@color/grey_60</item>
+    </style>
+
+    <style name="Yellow.Very.Small.AppCompatRatingBar" parent="@style/Yellow.Small.AppCompatRatingBar">
+        <item name="android:maxHeight">8.0dip</item>
+        <item name="android:minHeight">8.0dip</item>
+    </style>
+
+    <style name="EditText.White" parent="@style/AppTheme">
+        <item name="colorControlActivated">@android:color/white</item>
+        <item name="colorControlHighlight">@android:color/white</item>
+        <item name="colorControlNormal">@color/grey_10</item>
+    </style>
+
+    <style name="EditText.White.Hint" parent="@style/EditText.White">
+        <item name="android:textColorHint">@color/grey_10</item>
+        <item name="colorAccent">@android:color/white</item>
+    </style>
+
+    <style name="ProgressBar.White" parent="@style/AppTheme">
+        <item name="colorAccent">@android:color/white</item>
+        <item name="colorPrimary">@android:color/white</item>
+    </style>
+
+    <style name="EditText.Grey"
+        parent="@style/AppTheme">
+        <item name="colorControlActivated">@color/grey_60</item>
+        <item name="colorControlHighlight">@color/grey_60</item>
+        <item name="colorControlNormal">@color/grey_40</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay"
+        parent="@style/ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay"
+        parent="@style/ThemeOverlay.AppCompat.Light" />
+
+    <style name="CustomTabTextAppearance"
+        parent="@style/TextAppearance.Design.Tab">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/grey_10</item>
+        <item name="textAllCaps">true</item>
+    </style>
+
+    <style name="CustomTabLayout"
+        parent="@style/Widget.Design.TabLayout">
+        <item name="tabBackground">?selectableItemBackground</item>
+        <item name="tabIndicatorColor">@android:color/white</item>
+        <item name="tabIndicatorHeight">3.0dip</item>
+        <item name="tabSelectedTextColor">@android:color/white</item>
+        <item name="tabTextAppearance">@style/CustomTabTextAppearance</item>
+    </style>
+
+    <style name="FullScreenDialogStyle">
+        <item name="android:windowFullscreen">false</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
+
+    <!-- theme of image selector -->
+    <style name="Theme.Image.Selector" parent="Theme.AppCompat.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="toolbar">@style/Toolbar.Dracula</item>
+        <item name="album.dropdown.title.color">@color/dracula_album_dropdown_title_text</item>
+        <item name="album.dropdown.count.color">@color/dracula_album_dropdown_count_text</item>
+        <item name="album.element.color">@android:color/white</item>
+        <item name="album.thumbnail.placeholder">@color/dracula_album_dropdown_thumbnail_placeholder</item>
+        <item name="album.emptyView">@drawable/ic_empty_dracula</item>
+        <item name="album.emptyView.textColor">@color/dracula_album_empty_view</item>
+        <item name="item.placeholder">@color/dracula_item_placeholder</item>
+        <item name="item.checkCircle.backgroundColor">@color/dracula_item_checkCircle_backgroundColor</item>
+        <item name="item.checkCircle.borderColor">@color/dracula_item_checkCircle_borderColor</item>
+        <item name="page.bg">@color/dracula_page_bg</item>
+        <item name="bottomToolbar.bg">@color/colorPrimary</item>
+        <item name="bottomToolbar.preview.textColor">@color/md_dark_primary_text</item>
+        <item name="bottomToolbar.apply.textColor">@color/md_dark_primary_text</item>
+        <item name="preview.bottomToolbar.back.textColor">@color/dracula_preview_bottom_toolbar_back_text</item>
+        <item name="preview.bottomToolbar.apply.textColor">@color/common_google_signin_btn_text_dark_pressed</item>
+        <item name="android:listPopupWindowStyle">@style/Popup.Dracula</item>
+        <item name="listPopupWindowStyle">@style/Popup.Dracula</item>
+        <item name="capture.textColor">@color/dracula_capture</item>
+    </style>
+</resources>

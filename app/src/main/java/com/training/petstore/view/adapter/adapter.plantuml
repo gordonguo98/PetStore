@@ -1,0 +1,291 @@
+@startuml
+
+title __ADAPTER's Class Diagram__\n
+
+  namespace com.training.petstore {
+    namespace view.adapter {
+      class com.training.petstore.view.adapter.ArbitrationAdapter {
+          ~ arbitration : List<Arbitration>
+          ~ context : Context
+          + ArbitrationAdapter()
+          + getItemCount()
+          + onBindViewHolder()
+          + onCreateViewHolder()
+          + setOnItemClickListener()
+      }
+    }
+  }
+  
+
+  namespace com.training.petstore {
+    namespace view.adapter {
+      class com.training.petstore.view.adapter.ArbitrationAdapter.ArbitrationViewHolder {
+          - arbitrationId : TextView
+          - description : TextView
+          - rootView : View
+          - status : TextView
+          - time : TextView
+          - transactionId : TextView
+          + ArbitrationViewHolder()
+      }
+    }
+  }
+  
+
+  namespace com.training.petstore {
+    namespace view.adapter {
+      interface com.training.petstore.view.adapter.ArbitrationAdapter.OnItemClickListener {
+          {abstract} + onItemClick()
+      }
+    }
+  }
+  
+
+  namespace com.training.petstore {
+    namespace view.adapter {
+      class com.training.petstore.view.adapter.CartAdapter {
+          ~ context : Context
+          ~ pets : List<Pet>
+          + CartAdapter()
+          + getItemCount()
+          + onBindViewHolder()
+          + onCreateViewHolder()
+          + setOnCheckListener()
+          + setOnItemClickListener()
+          + setOnItemLongClickListener()
+      }
+    }
+  }
+  
+
+  namespace com.training.petstore {
+    namespace view.adapter {
+      class com.training.petstore.view.adapter.CartAdapter.CartViewHolder {
+          - checkBox : CheckBox
+          - description : TextView
+          - image : ImageView
+          - name : TextView
+          - price : TextView
+          - root : View
+          + CartViewHolder()
+      }
+    }
+  }
+  
+
+  namespace com.training.petstore {
+    namespace view.adapter {
+      interface com.training.petstore.view.adapter.CartAdapter.OnCheckListener {
+          {abstract} + onCheck()
+          {abstract} + onUnCheck()
+      }
+    }
+  }
+  
+
+  namespace com.training.petstore {
+    namespace view.adapter {
+      interface com.training.petstore.view.adapter.CartAdapter.OnItemClickListener {
+          {abstract} + onItemClick()
+      }
+    }
+  }
+  
+
+  namespace com.training.petstore {
+    namespace view.adapter {
+      interface com.training.petstore.view.adapter.CartAdapter.OnItemLongClickListener {
+          {abstract} + onItemLongClick()
+      }
+    }
+  }
+  
+
+  namespace com.training.petstore {
+    namespace view.adapter {
+      class com.training.petstore.view.adapter.MyPetsAdapter {
+          ~ context : Context
+          ~ myPets : List<Pet>
+          + MyPetsAdapter()
+          + getItemCount()
+          + onBindViewHolder()
+          + onCreateViewHolder()
+          + setOnItemClickListener()
+      }
+    }
+  }
+  
+
+  namespace com.training.petstore {
+    namespace view.adapter {
+      class com.training.petstore.view.adapter.MyPetsAdapter.MyPetsViewHolder {
+          - llt : View
+          - petImage : ImageView
+          - petName : TextView
+          - petPrice : TextView
+          - petState : TextView
+          + MyPetsViewHolder()
+      }
+    }
+  }
+  
+
+  namespace com.training.petstore {
+    namespace view.adapter {
+      interface com.training.petstore.view.adapter.MyPetsAdapter.OnItemClickListener {
+          {abstract} + onClick()
+      }
+    }
+  }
+  
+
+  namespace com.training.petstore {
+    namespace view.adapter {
+      class com.training.petstore.view.adapter.RecyclerViewSpacesItemDecoration {
+          {static} + BOTTOM_DECORATION : String
+          {static} + LEFT_DECORATION : String
+          {static} + RIGHT_DECORATION : String
+          {static} + TOP_DECORATION : String
+          - bottomSpace : int
+          - leftSpace : int
+          - rightSpace : int
+          - topSpace : int
+          + RecyclerViewSpacesItemDecoration()
+          + RecyclerViewSpacesItemDecoration()
+          + RecyclerViewSpacesItemDecoration()
+          + getItemOffsets()
+      }
+    }
+  }
+  
+
+  namespace com.training.petstore {
+    namespace view.adapter {
+      interface com.training.petstore.view.adapter.RecyclerViewSpacesItemDecoration.Decoration {
+      }
+    }
+  }
+  
+
+  namespace com.training.petstore {
+    namespace view.adapter {
+      class com.training.petstore.view.adapter.StorePetsListAdapter {
+          ~ petList : List<Pet>
+          {static} - TAG : String
+          - context : Context
+          - mInflater : LayoutInflater
+          + StorePetsListAdapter()
+          + getItemCount()
+          + onBindViewHolder()
+          + onCreateViewHolder()
+          + setOnItemClickListener()
+      }
+    }
+  }
+  
+
+  namespace com.training.petstore {
+    namespace view.adapter {
+      interface com.training.petstore.view.adapter.StorePetsListAdapter.OnItemClickListener {
+          {abstract} + onClick()
+      }
+    }
+  }
+  
+
+  namespace com.training.petstore {
+    namespace view.adapter {
+      class com.training.petstore.view.adapter.StorePetsListAdapter.StorePetsViewHolder {
+          - image : ImageView
+          - lyt : View
+          - more : ImageButton
+          - price : TextView
+          - title : TextView
+          + StorePetsViewHolder()
+      }
+    }
+  }
+  
+
+  namespace com.training.petstore {
+    namespace view.adapter {
+      class com.training.petstore.view.adapter.TransactionAdapter {
+          ~ context : Context
+          ~ transactions : List<Transaction>
+          + TransactionAdapter()
+          + getItemCount()
+          + onBindViewHolder()
+          + onCreateViewHolder()
+          + setOnItemClickListener()
+      }
+    }
+  }
+  
+
+  namespace com.training.petstore {
+    namespace view.adapter {
+      interface com.training.petstore.view.adapter.TransactionAdapter.OnItemClickListener {
+          {abstract} + onItemClick()
+      }
+    }
+  }
+  
+
+  namespace com.training.petstore {
+    namespace view.adapter {
+      class com.training.petstore.view.adapter.TransactionAdapter.TransactionViewHolder {
+          - cardView : CardView
+          - mask : View
+          - transactionBuyer : TextView
+          - transactionId : TextView
+          - transactionPet : TextView
+          - transactionPrice : TextView
+          - transactionSeller : TextView
+          - transactionTime : TextView
+          + TransactionViewHolder()
+      }
+    }
+  }
+  
+
+  com.training.petstore.view.adapter.ArbitrationAdapter -up-|> androidx.recyclerview.widget.RecyclerView.Adapter
+  com.training.petstore.view.adapter.ArbitrationAdapter o-- com.training.petstore.view.adapter.ArbitrationAdapter.OnItemClickListener : onItemClickListener
+  com.training.petstore.view.adapter.ArbitrationAdapter +-down- com.training.petstore.view.adapter.ArbitrationAdapter.ArbitrationViewHolder
+  com.training.petstore.view.adapter.ArbitrationAdapter +-down- com.training.petstore.view.adapter.ArbitrationAdapter.OnItemClickListener
+  com.training.petstore.view.adapter.ArbitrationAdapter.ArbitrationViewHolder -up-|> androidx.recyclerview.widget.RecyclerView.ViewHolder
+  com.training.petstore.view.adapter.CartAdapter -up-|> androidx.recyclerview.widget.RecyclerView.Adapter
+  com.training.petstore.view.adapter.CartAdapter o-- com.training.petstore.view.adapter.CartAdapter.OnCheckListener : onCheckListener
+  com.training.petstore.view.adapter.CartAdapter o-- com.training.petstore.view.adapter.CartAdapter.OnItemClickListener : onItemClickListener
+  com.training.petstore.view.adapter.CartAdapter o-- com.training.petstore.view.adapter.CartAdapter.OnItemLongClickListener : onItemLongClickListener
+  com.training.petstore.view.adapter.CartAdapter +-down- com.training.petstore.view.adapter.CartAdapter.CartViewHolder
+  com.training.petstore.view.adapter.CartAdapter +-down- com.training.petstore.view.adapter.CartAdapter.OnCheckListener
+  com.training.petstore.view.adapter.CartAdapter +-down- com.training.petstore.view.adapter.CartAdapter.OnItemClickListener
+  com.training.petstore.view.adapter.CartAdapter +-down- com.training.petstore.view.adapter.CartAdapter.OnItemLongClickListener
+  com.training.petstore.view.adapter.CartAdapter.CartViewHolder -up-|> androidx.recyclerview.widget.RecyclerView.ViewHolder
+  com.training.petstore.view.adapter.MyPetsAdapter -up-|> androidx.recyclerview.widget.RecyclerView.Adapter
+  com.training.petstore.view.adapter.MyPetsAdapter o-- com.training.petstore.view.adapter.MyPetsAdapter.OnItemClickListener : onItemClickListener
+  com.training.petstore.view.adapter.MyPetsAdapter +-down- com.training.petstore.view.adapter.MyPetsAdapter.MyPetsViewHolder
+  com.training.petstore.view.adapter.MyPetsAdapter +-down- com.training.petstore.view.adapter.MyPetsAdapter.OnItemClickListener
+  com.training.petstore.view.adapter.MyPetsAdapter.MyPetsViewHolder -up-|> androidx.recyclerview.widget.RecyclerView.ViewHolder
+  com.training.petstore.view.adapter.RecyclerViewSpacesItemDecoration -up-|> androidx.recyclerview.widget.RecyclerView.ItemDecoration
+  com.training.petstore.view.adapter.RecyclerViewSpacesItemDecoration +-down- com.training.petstore.view.adapter.RecyclerViewSpacesItemDecoration.Decoration
+  com.training.petstore.view.adapter.StorePetsListAdapter -up-|> androidx.recyclerview.widget.RecyclerView.Adapter
+  com.training.petstore.view.adapter.StorePetsListAdapter o-- com.training.petstore.view.adapter.StorePetsListAdapter.OnItemClickListener : onItemClickListener
+  com.training.petstore.view.adapter.StorePetsListAdapter +-down- com.training.petstore.view.adapter.StorePetsListAdapter.OnItemClickListener
+  com.training.petstore.view.adapter.StorePetsListAdapter +-down- com.training.petstore.view.adapter.StorePetsListAdapter.StorePetsViewHolder
+  com.training.petstore.view.adapter.StorePetsListAdapter.StorePetsViewHolder -up-|> androidx.recyclerview.widget.RecyclerView.ViewHolder
+  com.training.petstore.view.adapter.TransactionAdapter -up-|> androidx.recyclerview.widget.RecyclerView.Adapter
+  com.training.petstore.view.adapter.TransactionAdapter o-- com.training.petstore.view.adapter.TransactionAdapter.OnItemClickListener : onItemClickListener
+  com.training.petstore.view.adapter.TransactionAdapter +-down- com.training.petstore.view.adapter.TransactionAdapter.OnItemClickListener
+  com.training.petstore.view.adapter.TransactionAdapter +-down- com.training.petstore.view.adapter.TransactionAdapter.TransactionViewHolder
+  com.training.petstore.view.adapter.TransactionAdapter.TransactionViewHolder -up-|> androidx.recyclerview.widget.RecyclerView.ViewHolder
+
+
+right footer
+
+
+PlantUML diagram generated by SketchIt! (https://bitbucket.org/pmesmeur/sketch.it)
+For more information about this tool, please contact philippe.mesmeur@gmail.com
+endfooter
+
+@enduml

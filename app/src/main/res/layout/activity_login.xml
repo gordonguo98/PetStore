@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/activity_login_img"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/welcome"
+        android:contentDescription="@string/activity_login_background_description" />
+
+    <View
+        android:id="@+id/activity_login_mask_view"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@color/overlay_light_30" />
+
+    <LinearLayout
+        android:layout_width="330.0dip"
+        android:layout_height="fill_parent"
+        android:layout_centerInParent="true"
+        android:orientation="vertical"
+        android:padding="@dimen/spacing_large">
+
+        <View
+            android:layout_width="0.0dip"
+            android:layout_height="50.0dip" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/spacing_medium"
+            android:text="@string/activity_login_app_name"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Display2"
+            android:textColor="@android:color/white" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/spacing_medium"
+            android:fontFamily="sans-serif-light"
+            android:text="@string/activity_login_app_description"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+            android:textColor="@android:color/white" />
+
+        <View
+            android:layout_width="0.0dip"
+            android:layout_height="0.0dip"
+            android:layout_weight="1.0" />
+
+        <View
+            android:layout_width="50.0dip"
+            android:layout_height="3.0dip"
+            android:layout_gravity="center_horizontal"
+            android:background="@android:color/white" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/spacing_middle"
+            android:text="@string/activity_login_button_text"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+            android:textColor="@android:color/white"
+            android:textStyle="bold" />
+
+        <View
+            android:layout_width="0.0dip"
+            android:layout_height="0.0dip"
+            android:layout_weight="1.0" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/activity_login_account_text_layout"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/EditText.White.Hint">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/activity_login_account"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="-4.0dip"
+                android:layout_marginRight="-4.0dip"
+                android:hint="@string/activity_login_account_text"
+                android:inputType="text"
+                android:maxLength="50"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:textColor="@color/grey_10"
+                android:theme="@style/EditText.White" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <View
+            android:layout_width="0.0dip"
+            android:layout_height="@dimen/spacing_mlarge" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/activity_login_password_text_layout"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/EditText.White.Hint">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/activity_login_password"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="-4.0dip"
+                android:layout_marginRight="-4.0dip"
+                android:hint="@string/activity_login_password_text"
+                android:inputType="textPassword"
+                android:maxLength="50"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:textColor="@color/grey_10"
+                android:theme="@style/EditText.White" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <View
+            android:layout_width="0.0dip"
+            android:layout_height="@dimen/spacing_mxlarge" />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal">
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/activity_login_login_fab"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:textStyle="bold"
+                android:tint="@color/deep_purple_300"
+                app:backgroundTint="@android:color/white"
+                app:fabSize="normal"
+                app:rippleColor="@color/deep_purple_300"
+                app:srcCompat="@drawable/ic_arrow_right"
+                android:focusable="true" />
+
+            <ProgressBar
+                android:id="@+id/progress_bar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:theme="@style/ProgressBar.White"
+                android:visibility="gone" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="0.0dip"
+            android:layout_height="0.0dip"
+            android:layout_weight="1.0" />
+
+        <LinearLayout
+            android:id="@+id/sign_up_for_account"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_medium"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/activity_login_administrator_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/activity_login_administrator_login"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Subhead"
+                android:textColor="@color/grey_10" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="0.0dip"
+            android:layout_height="@dimen/spacing_medium" />
+    </LinearLayout>
+</RelativeLayout>

@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@android:color/white"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="fill_parent"
+        android:layout_height="?actionBarSize">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/dialog_full_screen_bt_close"
+                android:layout_width="?actionBarSize"
+                android:layout_height="?actionBarSize"
+                android:background="?selectableItemBackgroundBorderless"
+                android:tint="@android:color/white"
+                app:srcCompat="@drawable/ic_close" />
+
+            <TextView
+                android:id="@+id/dialog_full_screen_title"
+                android:layout_width="0.0dip"
+                android:layout_height="fill_parent"
+                android:layout_weight="1.0"
+                android:gravity="center_vertical"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Title"
+                android:textColor="@android:color/white" />
+
+            <Button
+                android:id="@+id/dialog_full_screen_btn"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:gravity="center"
+                android:paddingLeft="@dimen/spacing_xsmall"
+                android:paddingRight="@dimen/spacing_xsmall"
+                android:textColor="@android:color/white" />
+        </LinearLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/dialog_full_screen_nested_scroll_view"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:scrollbars="none"
+        android:scrollingCache="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/spacing_large"
+            android:orientation="vertical">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/dialog_full_screen_photo"
+                android:layout_width="96dp"
+                android:layout_height="96dp"
+                android:src="@drawable/ic_add_a_photo"
+                android:layout_gravity="center_horizontal" />
+
+            <View
+                android:layout_width="0.0dip"
+                android:layout_height="@dimen/spacing_mlarge" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                app:boxStrokeColor="@color/colorAccent"
+                app:boxStrokeWidth="1.0dp"
+                app:boxStrokeWidthFocused="2.0dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/dialog_full_screen_account"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="邮箱"
+                    android:maxLines="1"
+                    android:singleLine="true" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <View
+                android:layout_width="0.0dip"
+                android:layout_height="@dimen/spacing_mlarge" />
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="0.0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2.0"
+                    app:boxStrokeColor="@color/colorAccent"
+                    app:boxStrokeWidth="1.0dp"
+                    app:boxStrokeWidthFocused="2.0dp">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/dialog_full_screen_password"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="密码"
+                        android:maxLines="1"
+                        android:singleLine="true"
+                        android:inputType="textPassword"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <View
+                    android:layout_width="@dimen/spacing_large"
+                    android:layout_height="0.0dip" />
+
+                <Switch
+                    android:id="@+id/dialog_full_screen_switch"
+                    android:layout_width="0.0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.0"
+                    android:text="管理员" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="0.0dip"
+                android:layout_height="@dimen/spacing_mlarge" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                app:boxStrokeColor="@color/colorAccent"
+                app:boxStrokeWidth="1.0dp"
+                app:boxStrokeWidthFocused="2.0dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/dialog_full_screen_name"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="昵称"
+                    android:maxLines="1"
+                    android:singleLine="true" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <View
+                android:layout_width="0.0dip"
+                android:layout_height="@dimen/spacing_mlarge" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                app:boxStrokeColor="@color/colorAccent"
+                app:boxStrokeWidth="1.0dp"
+                app:boxStrokeWidthFocused="2.0dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/dialog_full_screen_asset"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="资产"
+                    android:maxLines="1"
+                    android:singleLine="true" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <View
+                android:layout_width="0.0dip"
+                android:layout_height="@dimen/spacing_mlarge" />
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="0.0dip"
+                android:layout_height="@dimen/spacing_mlarge" />
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</LinearLayout>

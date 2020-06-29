@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/browser_actions_divider_color"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+        <LinearLayout
+            android:layout_width="330.0dip"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_centerVertical="true"
+            android:orientation="vertical"
+            android:padding="@dimen/spacing_large">
+
+            <ImageView
+                android:layout_width="90.0dip"
+                android:layout_height="90.0dip"
+                android:layout_gravity="center_horizontal"
+                app:srcCompat="@drawable/ic_administrator"
+                android:tint="@color/grey_600" />
+
+            <View
+                android:layout_width="0.0dip"
+                android:layout_height="@dimen/spacing_xlarge" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="账号"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                android:textColor="@color/grey_700"
+                android:textStyle="bold" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/activity_manager_login_account_edit_text"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="-4.0dip"
+                android:layout_marginRight="-4.0dip"
+                android:inputType="textEmailAddress"
+                android:maxLength="50"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:textColor="@color/blue_grey_300"
+                android:theme="@style/EditText.Grey" />
+
+            <View
+                android:layout_width="0.0dip"
+                android:layout_height="@dimen/spacing_mlarge" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="密码"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                android:textColor="@color/grey_700"
+                android:textStyle="bold" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/activity_manager_login_password_edit_text"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="-4.0dip"
+                android:layout_marginRight="-4.0dip"
+                android:inputType="textPassword"
+                android:maxLength="50"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:textColor="@color/blue_grey_300"
+                android:theme="@style/EditText.Grey" />
+
+            <View
+                android:layout_width="0.0dip"
+                android:layout_height="@dimen/spacing_middle" />
+
+            <View
+                android:layout_width="0.0dip"
+                android:layout_height="@dimen/spacing_large" />
+
+            <Button
+                android:id="@+id/activity_manager_login_login_button"
+                android:layout_width="fill_parent"
+                android:layout_height="55.0dip"
+                android:layout_marginLeft="-4.0dip"
+                android:layout_marginRight="-4.0dip"
+                android:background="@drawable/btn_rounded_grey_600"
+                android:text="登录"
+                android:textAllCaps="false"
+                android:textColor="@color/grey_200" />
+
+            <View
+                android:layout_width="0.0dip"
+                android:layout_height="@dimen/spacing_medium" />
+
+            <TextView
+                android:id="@+id/activity_manager_login_sign_in"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="注册"
+                android:textSize="16sp"
+                android:textColor="@color/grey_700"
+                android:layout_gravity="center" />
+
+            <View
+                android:layout_width="0.0dip"
+                android:layout_height="@dimen/spacing_medium" />
+
+        </LinearLayout>
+    </RelativeLayout>
+</LinearLayout>

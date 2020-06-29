@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@android:color/white"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="?actionBarSize"
+        android:background="@color/primary"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/activity_manage_pets_bt_close"
+            android:layout_width="?actionBarSize"
+            android:layout_height="?actionBarSize"
+            android:background="?selectableItemBackgroundBorderless"
+            android:tint="@color/grey_5"
+            app:srcCompat="@drawable/ic_chevron_left" />
+
+        <TextView
+            android:id="@+id/activity_manage_pets_title"
+            android:layout_width="0.0dip"
+            android:layout_height="fill_parent"
+            android:layout_weight="1.0"
+            android:gravity="center"
+            android:text="注册宠物"
+            android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+            android:textColor="@color/grey_5"
+            app:fontFamily="sans-serif-medium" />
+
+        <ImageButton
+            android:id="@+id/activity_manage_pets_done_btn"
+            android:layout_width="?actionBarSize"
+            android:layout_height="?actionBarSize"
+            android:background="?selectableItemBackgroundBorderless"
+            android:tint="@color/grey_5"
+            app:srcCompat="@drawable/ic_done" />
+    </LinearLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:clipToPadding="false"
+        android:fillViewport="true"
+        android:scrollbars="none"
+        android:scrollingCache="true">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingLeft="@dimen/spacing_mxlarge"
+            android:paddingTop="@dimen/spacing_medium"
+            android:paddingRight="@dimen/spacing_mxlarge"
+            android:paddingBottom="@dimen/spacing_xxlarge">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/picture"
+                android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+                android:textColor="@color/grey_40" />
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_middle"
+                android:background="@drawable/edit_text_round_bg_outline"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="@dimen/spacing_large">
+
+                <ImageView
+                    android:id="@+id/activity_manage_pets_pet_image"
+                    android:layout_width="80.0dip"
+                    android:layout_height="80.0dip"
+                    android:clickable="false"
+                    app:srcCompat="@drawable/ic_photo" />
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/choose_pet_photo"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                    android:textColor="@color/grey_40" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_mlarge"
+                android:text="@string/pet_name"
+                android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+                android:textColor="@color/grey_40" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/spacing_xmlarge"
+                android:layout_marginTop="@dimen/spacing_middle"
+                android:background="@color/grey_3"
+                app:hintEnabled="false">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/activity_manage_pets_name_edit_text"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:background="@drawable/edit_text_round_bg_outline" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_mlarge"
+                android:text="出生日期"
+                android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+                android:textColor="@color/grey_40" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/spacing_xmlarge"
+                android:layout_marginTop="@dimen/spacing_middle"
+                android:background="@color/grey_3"
+                app:hintEnabled="false">
+
+                <EditText
+                    android:id="@+id/activity_manage_pets_birth_edit_text"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:clickable="false"
+                    android:focusable="false"
+                    android:background="@drawable/edit_text_round_bg_outline" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_mlarge"
+                android:text="品种"
+                android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+                android:textColor="@color/grey_40" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/spacing_xmlarge"
+                android:layout_marginTop="@dimen/spacing_middle"
+                android:background="@color/grey_3"
+                app:hintEnabled="false">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/activity_manage_pets_variety_edit_text"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:background="@drawable/edit_text_round_bg_outline" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_mlarge"
+                android:text="价格"
+                android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+                android:textColor="@color/grey_40" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/spacing_xmlarge"
+                    android:layout_weight="2.0"
+                    android:layout_marginTop="@dimen/spacing_middle"
+                    android:background="@color/grey_3"
+                    app:hintEnabled="false" >
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/activity_manage_pets_price_edit_text"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:hint="@string/unit_yuan"
+                        android:background="@drawable/edit_text_round_bg_outline" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <Switch
+                    android:id="@+id/activity_manage_pets_on_sell"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/spacing_middle"
+                    android:layout_weight="1.0"
+                    android:text="是否上架"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/grey_700"/>
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_mlarge"
+                android:text="描述"
+                android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+                android:textColor="@color/grey_40" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_middle"
+                android:background="@color/grey_3"
+                app:hintEnabled="false">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/activity_manage_pets_description_edit_text"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:background="@drawable/edit_text_round_bg_outline"
+                    android:gravity="start"
+                    android:inputType="textMultiLine"
+                    android:lines="4"
+                    android:text="天青色等烟雨，而我咕咕嘎嘎嘎"
+                    android:textColor="@color/grey_60" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</LinearLayout>

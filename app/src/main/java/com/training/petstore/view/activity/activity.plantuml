@@ -1,0 +1,340 @@
+@startuml
+
+title __ACTIVITY's Class Diagram__\n
+
+  namespace com.training.petstore {
+    namespace view.activity {
+      class com.training.petstore.view.activity.CartActivity {
+          ~ count : int
+          ~ failTransaction : int
+          - alertDialog : AlertDialog
+          - noItemText : TextView
+          - noItemView : View
+          - pets : List<Pet>
+          - progressDialog : ProgressDialog
+          - recyclerView : RecyclerView
+          - submit : View
+          - swipeRefreshLayout : SwipeRefreshLayout
+          - toolbar : Toolbar
+          - total : int
+          - totalPrice : TextView
+          + continueTransaction()
+          + deleteCart()
+          + getPets()
+          + onDeleteSuccess()
+          + onOptionsItemSelected()
+          + onTransactionFail()
+          + onTransactionSuccess()
+          + refreshPets()
+          + send()
+          + show()
+          # onCreate()
+          - initView()
+          - sendTransactions()
+      }
+    }
+  }
+  
+
+  namespace com.training.petstore {
+    namespace view.activity {
+      class com.training.petstore.view.activity.CartActivity.MyHandler {
+          + MyHandler()
+          + handleMessage()
+      }
+    }
+  }
+  
+
+  namespace com.training.petstore {
+    namespace view.activity {
+      class com.training.petstore.view.activity.LoginActivity {
+          {static} - MY_PERMISSIONS_REQUEST_READ_STORAGE : int
+          {static} - TAG : String
+          - accountEditText : TextInputEditText
+          - adminTextView : TextView
+          - loginButton : FloatingActionButton
+          - passwordEditText : TextInputEditText
+          - progressDialog : ProgressDialog
+          - rootView : View
+          + askForPermissions()
+          + goToManagerLoginActivity()
+          + initView()
+          + login()
+          + onFail()
+          + onRequestPermissionsResult()
+          # onCreate()
+          - onSuccess()
+      }
+    }
+  }
+  
+
+  namespace com.training.petstore {
+    namespace view.activity {
+      class com.training.petstore.view.activity.LoginActivity.MyHandler {
+          + MyHandler()
+          + handleMessage()
+      }
+    }
+  }
+  
+
+  namespace com.training.petstore {
+    namespace view.activity {
+      class com.training.petstore.view.activity.ManagePetsActivity {
+          ~ mSelected : List<Uri>
+          ~ pickiT : PickiT
+          {static} - REQUEST_CODE_CHOOSE : int
+          {static} - TAG : String
+          - action : String
+          - birthText : EditText
+          - closeBtn : ImageButton
+          - doneBtn : ImageButton
+          - imageBtn : ImageView
+          - imagePath : String
+          - petDescription : EditText
+          - petName : EditText
+          - petOnSell : Switch
+          - petPrice : TextInputEditText
+          - petVariety : EditText
+          - progressDialog : ProgressDialog
+          - title : TextView
+          + PickiTonCompleteListener()
+          + PickiTonProgressUpdate()
+          + PickiTonStartListener()
+          + PickiTonUriReturned()
+          + createOrModifyPet()
+          + getPhotoUrl()
+          + hideKeyBoard()
+          + initView()
+          + onUploadImageFailed()
+          + onUploadImageSucceeded()
+          + submit()
+          # onActivityResult()
+          # onCreate()
+          - onFail()
+          - onSuccess()
+          - pickDate()
+      }
+    }
+  }
+  
+
+  namespace com.training.petstore {
+    namespace view.activity {
+      class com.training.petstore.view.activity.ManagePetsActivity.MyHandler {
+          + MyHandler()
+          + handleMessage()
+      }
+    }
+  }
+  
+
+  namespace com.training.petstore {
+    namespace view.activity {
+      class com.training.petstore.view.activity.ManagerLoginActivity {
+          ~ imagePath : String
+          ~ mSelected : List<Uri>
+          ~ photo : CircleImageView
+          ~ pickiT : PickiT
+          - REQUEST_CODE_PICK_IMAGE : int
+          - accountEditText : TextInputEditText
+          - asset : TextInputEditText
+          - loginBtn : Button
+          - nickName : TextInputEditText
+          - password : TextInputEditText
+          - passwordEditText : TextInputEditText
+          - progressDialog : ProgressDialog
+          - registerBtn : TextView
+          - userId : TextInputEditText
+          + PickiTonCompleteListener()
+          + PickiTonProgressUpdate()
+          + PickiTonStartListener()
+          + PickiTonUriReturned()
+          + getPhotoUrl()
+          + initView()
+          + login()
+          + register()
+          # onActivityResult()
+          # onCreate()
+          - onFail()
+          - onSuccess()
+          - onUploadImageFailed()
+          - onUploadImageSucceeded()
+          - register()
+      }
+    }
+  }
+  
+
+  namespace com.training.petstore {
+    namespace view.activity {
+      class com.training.petstore.view.activity.ManagerLoginActivity.MyHandler {
+          + MyHandler()
+          + handleMessage()
+      }
+    }
+  }
+  
+
+  namespace com.training.petstore {
+    namespace view.activity {
+      class com.training.petstore.view.activity.ManagingActivity {
+          ~ titles : List<String>
+          - fragmentTab : TabLayout
+          - fragmentViewPager : ViewPager
+          - fragments : List<Fragment>
+          - toolbar : Toolbar
+          + initView()
+          + onOptionsItemSelected()
+          # onActivityResult()
+          # onCreate()
+      }
+    }
+  }
+  
+
+  namespace com.training.petstore {
+    namespace view.activity {
+      class com.training.petstore.view.activity.PetDetailActivity {
+          ~ position : int
+          - alertDialog : AlertDialog
+          - progressDialog : ProgressDialog
+          + addToCart()
+          + finishTransaction()
+          + initView()
+          + showPurchaseDialog()
+          # onCreate()
+          - show()
+      }
+    }
+  }
+  
+
+  namespace com.training.petstore {
+    namespace view.activity {
+      class com.training.petstore.view.activity.PetDetailActivity.MyHandler {
+          ~ alertDialog : AlertDialog
+          + MyHandler()
+          + handleMessage()
+      }
+    }
+  }
+  
+
+  namespace com.training.petstore {
+    namespace view.activity {
+      class com.training.petstore.view.activity.StoreActivity {
+          {static} - REQUEST_CODE_CART : int
+          {static} - REQUEST_CODE_CREATE_PET : int
+          {static} - REQUEST_CODE_MODIFY_PET : int
+          {static} - REQUEST_CODE_PURCHASE_PET : int
+          {static} - TAG : String
+          - addPetBtn : FloatingActionButton
+          - alertDialog : AlertDialog
+          - drawer : Drawer
+          - gridLayoutManager : GridLayoutManager
+          - item4 : SecondaryDrawerItem
+          - linearLayoutManager : LinearLayoutManager
+          - myPets : List<Pet>
+          - noItemHint : TextView
+          - noItemView : View
+          - petList : List<Pet>
+          - progressDialog : ProgressDialog
+          - recyclerView : RecyclerView
+          - swipeRefreshLayout : SwipeRefreshLayout
+          - toolbar : Toolbar
+          - transactions : List<Transaction>
+          + deletePet()
+          + editOrDeletePet()
+          + editPet()
+          + exitLogin()
+          + finishArbitrationRequest()
+          + getPets()
+          + getTransactions()
+          + goToPetDetailActivity()
+          + initDrawerLayout()
+          + initImageLoader()
+          + initView()
+          + onCreateOptionsMenu()
+          + onOptionsItemSelected()
+          + queryUserInfo()
+          + refreshMarketPets()
+          + refreshMyPets()
+          + refreshTransactions()
+          + requestArbitration()
+          + showMarketPets()
+          + showMyPets()
+          + showMyTransactions()
+          + updateBalance()
+          # onActivityResult()
+          # onCreate()
+          - initTestData()
+          - show()
+      }
+    }
+  }
+  
+
+  namespace com.training.petstore {
+    namespace view.activity {
+      class com.training.petstore.view.activity.StoreActivity.MyHandler {
+          + MyHandler()
+          + handleMessage()
+      }
+    }
+  }
+  
+
+  com.training.petstore.view.activity.CartActivity -up-|> androidx.appcompat.app.AppCompatActivity
+  com.training.petstore.view.activity.CartActivity o-- com.training.petstore.view.activity.CartActivity.MyHandler : myHandler
+  com.training.petstore.view.activity.CartActivity o-- com.training.petstore.view.adapter.CartAdapter : cartAdapter
+  com.training.petstore.view.activity.CartActivity +-down- com.training.petstore.view.activity.CartActivity.MyHandler
+  com.training.petstore.view.activity.CartActivity.MyHandler -up-|> android.os.Handler
+  com.training.petstore.view.activity.CartActivity.MyHandler o-- com.training.petstore.view.activity.CartActivity : cartActivity
+  com.training.petstore.view.activity.LoginActivity -up-|> androidx.appcompat.app.AppCompatActivity
+  com.training.petstore.view.activity.LoginActivity o-- com.training.petstore.view.activity.LoginActivity.MyHandler : myHandler
+  com.training.petstore.view.activity.LoginActivity +-down- com.training.petstore.view.activity.LoginActivity.MyHandler
+  com.training.petstore.view.activity.LoginActivity.MyHandler -up-|> android.os.Handler
+  com.training.petstore.view.activity.LoginActivity.MyHandler o-- com.training.petstore.view.activity.LoginActivity : loginActivity
+  com.training.petstore.view.activity.ManagePetsActivity .up.|> com.hbisoft.pickit.PickiTCallbacks
+  com.training.petstore.view.activity.ManagePetsActivity -up-|> androidx.appcompat.app.AppCompatActivity
+  com.training.petstore.view.activity.ManagePetsActivity o-- com.training.petstore.view.activity.ManagePetsActivity.MyHandler : myHandler
+  com.training.petstore.view.activity.ManagePetsActivity o-- com.training.petstore.model.bean.Pet : pet
+  com.training.petstore.view.activity.ManagePetsActivity +-down- com.training.petstore.view.activity.ManagePetsActivity.MyHandler
+  com.training.petstore.view.activity.ManagePetsActivity.MyHandler -up-|> android.os.Handler
+  com.training.petstore.view.activity.ManagePetsActivity.MyHandler o-- com.training.petstore.view.activity.ManagePetsActivity : managePetsActivity
+  com.training.petstore.view.activity.ManagerLoginActivity .up.|> com.hbisoft.pickit.PickiTCallbacks
+  com.training.petstore.view.activity.ManagerLoginActivity -up-|> androidx.appcompat.app.AppCompatActivity
+  com.training.petstore.view.activity.ManagerLoginActivity o-- com.training.petstore.view.activity.ManagerLoginActivity.MyHandler : myHandler
+  com.training.petstore.view.activity.ManagerLoginActivity +-down- com.training.petstore.view.activity.ManagerLoginActivity.MyHandler
+  com.training.petstore.view.activity.ManagerLoginActivity.MyHandler -up-|> android.os.Handler
+  com.training.petstore.view.activity.ManagerLoginActivity.MyHandler o-- com.training.petstore.view.activity.ManagerLoginActivity : managerLoginActivity
+  com.training.petstore.view.activity.ManagingActivity -up-|> androidx.appcompat.app.AppCompatActivity
+  com.training.petstore.view.activity.PetDetailActivity -up-|> androidx.appcompat.app.AppCompatActivity
+  com.training.petstore.view.activity.PetDetailActivity o-- com.training.petstore.view.activity.PetDetailActivity.MyHandler : myHandler
+  com.training.petstore.view.activity.PetDetailActivity o-- com.training.petstore.model.bean.Pet : pet
+  com.training.petstore.view.activity.PetDetailActivity o-- com.training.petstore.model.bean.User : user
+  com.training.petstore.view.activity.PetDetailActivity +-down- com.training.petstore.view.activity.PetDetailActivity.MyHandler
+  com.training.petstore.view.activity.PetDetailActivity.MyHandler -up-|> android.os.Handler
+  com.training.petstore.view.activity.PetDetailActivity.MyHandler o-- com.training.petstore.view.activity.PetDetailActivity : petDetailActivity
+  com.training.petstore.view.activity.StoreActivity -up-|> androidx.appcompat.app.AppCompatActivity
+  com.training.petstore.view.activity.StoreActivity o-- com.training.petstore.view.activity.StoreActivity.MyHandler : myHandler
+  com.training.petstore.view.activity.StoreActivity o-- com.training.petstore.model.bean.User : user
+  com.training.petstore.view.activity.StoreActivity o-- com.training.petstore.view.adapter.StorePetsListAdapter : adapter
+  com.training.petstore.view.activity.StoreActivity o-- com.training.petstore.view.adapter.MyPetsAdapter : myPetsAdapter
+  com.training.petstore.view.activity.StoreActivity o-- com.training.petstore.view.adapter.TransactionAdapter : transactionAdapter
+  com.training.petstore.view.activity.StoreActivity +-down- com.training.petstore.view.activity.StoreActivity.MyHandler
+  com.training.petstore.view.activity.StoreActivity.MyHandler -up-|> android.os.Handler
+  com.training.petstore.view.activity.StoreActivity.MyHandler o-- com.training.petstore.view.activity.StoreActivity : storeActivity
+
+
+right footer
+
+
+PlantUML diagram generated by SketchIt! (https://bitbucket.org/pmesmeur/sketch.it)
+For more information about this tool, please contact philippe.mesmeur@gmail.com
+endfooter
+
+@enduml

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    app:cardBackgroundColor="@android:color/white"
+    app:cardCornerRadius="8.0dip"
+    app:cardElevation="3.0dip">
+
+    <com.balysv.materialripple.MaterialRippleLayout
+        style="@style/RippleStyleBlack"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:id="@+id/lyt_parent"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:orientation="vertical"
+            android:focusable="true">
+
+            <ImageView
+                android:id="@+id/item_shop_product_card_image"
+                android:layout_width="fill_parent"
+                android:layout_height="150.0dip"
+                android:scaleType="centerCrop"
+                app:srcCompat="@drawable/image_shop_2" />
+
+            <View
+                android:layout_width="0.0dip"
+                android:layout_height="@dimen/spacing_medium" />
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <View
+                    android:layout_width="@dimen/spacing_middle"
+                    android:layout_height="0.0dip" />
+
+                <TextView
+                    android:id="@+id/item_shop_product_card_title"
+                    android:layout_width="0.0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/spacing_xmedium"
+                    android:layout_weight="2.0"
+                    android:text="@string/pet_name"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+                    android:textColor="@color/grey_90" />
+
+                <ImageButton
+                    android:id="@+id/item_shop_product_card_more"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/spacing_xlarge"
+                    android:background="?selectableItemBackgroundBorderless"
+                    android:tint="@color/grey_40"
+                    app:srcCompat="@drawable/ic_more_vert" />
+
+                <View
+                    android:layout_width="@dimen/spacing_small"
+                    android:layout_height="0.0dip" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="0.0dip"
+                android:layout_height="@dimen/spacing_medium" />
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <View
+                    android:layout_width="@dimen/spacing_middle"
+                    android:layout_height="0.0dip" />
+
+                <TextView
+                    android:id="@+id/item_shop_product_card_price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="￥ 80.00"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+                    android:textColor="@color/common_google_signin_btn_text_light_default"
+                    android:textStyle="bold" />
+
+                <View
+                    android:layout_width="@dimen/spacing_middle"
+                    android:layout_height="0.0dip" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="0.0dip"
+                android:layout_height="@dimen/spacing_middle" />
+        </LinearLayout>
+    </com.balysv.materialripple.MaterialRippleLayout>
+</androidx.cardview.widget.CardView>

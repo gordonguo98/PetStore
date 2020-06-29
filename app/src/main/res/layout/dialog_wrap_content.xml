@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:id="@+id/dialog_wrap_content_linearLayout"
+        android:layout_width="300dip"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/spacing_large"
+        android:layout_marginRight="@dimen/spacing_large"
+        android:orientation="horizontal"
+        android:paddingTop="@dimen/spacing_xlarge"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:text="@string/activity_login_account_text"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Title"
+            android:textColor="@color/grey_80" />
+
+        <View
+            android:layout_width="@dimen/spacing_medium"
+            android:layout_height="0.0dip" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/dialog_wrap_content_account_edit_text"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textEmailAddress"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+            android:textColor="@color/grey_90"
+            android:textStyle="bold">
+
+            <requestFocus />
+        </com.google.android.material.textfield.TextInputEditText>
+    </LinearLayout>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/dialog_wrap_content_bt_delete"
+        android:layout_width="200.0dip"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_xlarge"
+        android:layout_marginBottom="@dimen/spacing_xlarge"
+        android:background="@drawable/btn_rounded_color_accent"
+        android:text="@string/delete"
+        android:textColor="@android:color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/dialog_wrap_content_linearLayout" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,43 @@
+<!-- Copyright 2017 Google Inc.
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License. -->
+
+<resources>
+    <string name="app_name">PetStore</string>
+    <string name="action_settings">Settings</string>
+    <string name="hint_word">Word…</string>
+    <string name="button_save">Save</string>
+    <string name="empty_not_saved">Word not saved because it is empty.</string>
+    <string name="add_word">Add word</string>
+    <string name="activity_login_app_description">——宠物交易平台——</string>
+    <string name="activity_login_app_name">Pet Store</string>
+    <string name="activity_login_background_description">背景</string>
+    <string name="activity_login_button_text">登录</string>
+    <string name="activity_login_account_text">账号</string>
+    <string name="activity_login_password_text">密码</string>
+    <string name="activity_login_administrator_login">管理员登录？</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="no_user">当前用户列表为空\n点击下方的按钮添加用户</string>
+    <string name="delete">删除</string>
+    <string name="pet_name">宠物名字</string>
+    <string name="picture">图片</string>
+    <string name="choose_pet_photo">选择一张宠物的照片</string>
+    <string name="unit_yuan">单位：元</string>
+    <string name="detail_description">描述</string>
+    <string name="detail_birth">出生日期</string>
+    <string name="detail_variety">品种</string>
+    <string name="detail_seller">卖家ID</string>
+    <string name="no_info">暂无此信息</string>
+    <string name="long_text">天青色等烟雨，而我咕咕嘎嘎噶，你好，恭喜发财，救命啊，开挖掘机啦</string>
+</resources>

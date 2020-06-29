@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main_content"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:fitsSystemWindows="true">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/activity_managing_appbar"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/activity_managing_toolbar"
+            android:layout_width="fill_parent"
+            android:layout_height="?actionBarSize"
+            android:background="?colorPrimary"
+            app:contentInsetStartWithNavigation="0.0dip"
+            app:layout_scrollFlags="enterAlways|scroll"
+            app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/activity_managing_tab_layout"
+            style="@style/CustomTabLayout"
+            android:layout_width="fill_parent"
+            android:layout_height="?actionBarSize"
+            android:layout_gravity="left"
+            android:background="@color/colorPrimary"
+            app:tabGravity="fill"
+            app:tabMode="fixed" />
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/activity_managing_view_pager"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.balysv.materialripple.MaterialRippleLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/item_arbitration_root"
+    style="@style/RippleStyleBlack"
+    android:background="@color/grey_5"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/spacing_middle"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:id="@+id/item_arbitration_llt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/spacing_middle"
+                android:paddingBottom="@dimen/spacing_middle"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/item_arbitration_id"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ID: 33112456"
+                    android:textStyle="bold"
+                    android:textSize="18sp"
+                    android:textColor="@color/grey_800" />
+
+                <View
+                    android:layout_width="0.0dp"
+                    android:layout_height="@dimen/spacing_small" />
+
+                <TextView
+                    android:id="@+id/item_arbitration_transaction"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="交易ID: 11263"
+                    android:textColor="@color/grey_700" />
+
+                <View
+                    android:layout_width="0.0dp"
+                    android:layout_height="@dimen/spacing_small" />
+
+                <TextView
+                    android:id="@+id/item_arbitration_description"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="申请描述: 天青色等烟雨，而我咕咕嘎嘎嘎..." />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/item_arbitration_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:textAlignment="textEnd"
+                android:padding="@dimen/spacing_middle"
+                android:text="日期: 2020-06-25" />
+
+            <TextView
+                android:id="@+id/item_arbitration_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/spacing_middle"
+                android:layout_alignBottom="@id/item_arbitration_llt"
+                android:layout_alignParentEnd="true"
+                android:paddingEnd="@dimen/spacing_middle"
+                android:text="已审核"
+                android:textColor="@color/colorAccent"
+                android:textStyle="italic" />
+
+        </RelativeLayout>
+
+
+        
+    </LinearLayout>
+    
+</com.balysv.materialripple.MaterialRippleLayout>
