@@ -594,7 +594,7 @@ public class StoreActivity extends AppCompatActivity {
                     storeActivity.show((String) msg.obj);
                     storeActivity.refreshTransactions();
                     break;
-                case IntConstants.CODE_QUERY_SUCCESS:
+                case IntConstants.FINISH_QUERY_ACCOUNT:
                     storeActivity.show((String) msg.obj);
                     storeActivity.updateBalance();
                     break;

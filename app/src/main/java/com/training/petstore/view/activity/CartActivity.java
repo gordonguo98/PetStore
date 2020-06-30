@@ -53,6 +53,7 @@ public class CartActivity extends AppCompatActivity {
     MyHandler myHandler;
     int count;
     int failTransaction;
+    int numberOfCheckedCart = 0;
 
     private int total = 0;
 
@@ -138,6 +139,7 @@ public class CartActivity extends AppCompatActivity {
                 total += pets.get(position).getPrice();
                 String price = "¥ " + total;
                 totalPrice.setText(price);
+                numberOfCheckedCart++;
             }
 
             @Override
@@ -146,6 +148,7 @@ public class CartActivity extends AppCompatActivity {
                 total -= pets.get(position).getPrice();
                 String price = "¥ " + total;
                 totalPrice.setText(price);
+                numberOfCheckedCart--;
             }
         });
 
@@ -159,11 +162,18 @@ public class CartActivity extends AppCompatActivity {
 
     private void sendTransactions() {
 
+        if(numberOfCheckedCart == 0){
+            Toast.makeText(this, "未勾选任何订单", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
         count = pets.size() - 1;
         failTransaction = 0;
 
-        if(count < 0)
+        if(count < 0) {
+            Toast.makeText(this, "购物车为空", Toast.LENGTH_SHORT).show();
             return;
+        }
 
         progressDialog.setTitle("提示");
         progressDialog.setMessage("正在交易...");
@@ -295,6 +305,7 @@ public class CartActivity extends AppCompatActivity {
             String price = "¥ " + total;
             totalPrice.setText(price);
             refreshPets();
+            numberOfCheckedCart = 0;
         }
     }
 
